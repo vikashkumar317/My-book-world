@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block anchor %}
+    <a class="nav-link " href='{{ url_for('logout') }}'>
+        Logout <strong>{{ user_email }}</strong>
+    </a>
+{% endblock %}
+
+
+{% block body %}
+    {% if error_message %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Error Occurred!!</h4><br>
+            <p>
+                  {{ error_message }}
+            </p>
+        </div>
+
+    {% elif message %}
+        <div style="background-color: lightgreen;color:green">
+          <h4>{{ message }}</h4><br>
+        </div>
+
+    {% endif %}
+
+    {% for book in book_list %}
+        <ul>
+            <a href="{{ url_for('detail', book_id = book.id) }}"> <b>{{ book.title }}</b> by {{ book.author }} </a>
+        </ul>
+    {% endfor %}
+
+{% endblock %}

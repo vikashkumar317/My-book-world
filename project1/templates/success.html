@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <br>
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Your Password is updated successfully.</h4><br>
+        <br>
+        <a href='{{ url_for('login') }}'>Go To Login Page</a>
+    </div>
+
+{% endblock %}

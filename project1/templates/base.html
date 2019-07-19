@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+        <title>My Book World</title>
+    </head>
+
+    <body class="bg-light">
+        <div style="position:fixed; width:100%; top:0;">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href='{{ url_for('index') }}'>My book world</a>
+                <ul class="nav navbar-nav ml-auto">
+                  {% block anchor %}
+
+                  {% endblock %}
+                </ul>
+          </nav>
+        </div>
+
+    <br/><br/><br/>
+      <div class="container container-fluid">
+          {% block body %}
+          {% endblock %}
+      </div>
+      <br/><br/><br/>
+      <div style="position:fixed;bottom:0;height:50px;width:100%;">
+      <p style="text-align:Right" class="bg-info pr-5 pt-3 pb-3">© 2019 Vikash</p>
+    </div>
+    </body>
+</html>
